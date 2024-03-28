@@ -9,31 +9,39 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Function to create a button
   function createButton(buttonID, imagePath, clickHandler) {
-    const button = document.createElement('img');
-    button.src = imagePath; // Set the image path
-    button.id = buttonID;
-    button.style.position = 'absolute';
+  const button = document.createElement('img');
+  button.src = imagePath; // Set the image path
+  button.id = buttonID;
+  button.style.position = 'absolute';
 
-      // Random position within canvas bounds
-      const canvasRect = canvas.getBoundingClientRect(); // Get canvas position on the page
-      const canvasWidth = canvas.width - 100;
-      const canvasHeight = canvas.height - 100;
-      const randomX = Math.floor(Math.random() * canvasWidth );
-      const randomY = Math.floor(Math.random() * canvasHeight );
+  // Random position within canvas bounds
+  const canvasRect = canvas.getBoundingClientRect(); // Get canvas position on the page
+  const randomX = Math.floor(Math.random() * canvas.width);
+  const randomY = Math.floor(Math.random() * canvas.height);
 
-      // Calculate position relative to the canvas position on the page
-      const buttonX = canvasRect.left + randomX;
-      const buttonY = canvasRect.top + randomY;
+  // Position the button relative to the canvas
+  button.style.left = randomX + 'px';
+  button.style.top = randomY + 'px';
 
-      button.style.left = buttonX + 'px';
-      button.style.top = buttonY + 'px';
+  // Add button to the canvas
+  canvas.parentNode.appendChild(button);
 
-      // Add button to game-container
-      document.getElementById('game-container').appendChild(button);
+  // Add event listener to the button
+  button.addEventListener('click', clickHandler);
+}
 
-      // Add event listener to the button
-      button.addEventListener('click', clickHandler);
-  }
+// Function to update positions of all buttons
+function updateButtonPositions() {
+  const buttons = document.querySelectorAll('img');
+  buttons.forEach(button => {
+    const randomX = Math.floor(Math.random() * canvas.width);
+    const randomY = Math.floor(Math.random() * canvas.height);
+
+    // Position the button relative to the canvas
+    button.style.left = randomX + 'px';
+    button.style.top = randomY + 'px';
+  });
+}
 
   // Function to add 5 seconds to the timer when the button is clicked
   function addTimeButtonClickHandler() {
@@ -108,23 +116,7 @@ document.addEventListener("DOMContentLoaded", function() {
       createReduceTimeButtons(numberOfButtons);
   }
 
-  // Function to update positions of all buttons
-  function updateButtonPositions() {
-      const buttons = document.querySelectorAll('img');
-      buttons.forEach(button => {
-          const canvasRect = canvas.getBoundingClientRect(); // Get canvas position on the page
-          const canvasWidth = canvas.width - 100;
-          const canvasHeight = canvas.height - 100;
-          const randomX = Math.floor(Math.random() * canvasWidth + 50);
-          const randomY = Math.floor(Math.random() * canvasHeight + 50);
 
-          const buttonX = canvasRect.left + randomX;
-          const buttonY = canvasRect.top + randomY;
-
-          button.style.left = buttonX + 'px';
-          button.style.top = buttonY + 'px';
-      });
-  }
   // Function to decrease the time remaining and update the timer display
   function countdown() {
     // Decrease the time remaining
