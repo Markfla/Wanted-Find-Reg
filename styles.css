@@ -76,7 +76,7 @@ canvas {
 @media only screen and (max-width: 480px) {
   /* Additional mobile-specific styles */
   #gameCanvas {
-    height: 200;
-    width: 200;
+    max-height: 200;
+    max-width: 200;
   }
 }
