@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Additional functionality: Change the image of the "Add Time" button
     const addTimeButton = document.getElementById('addTimeButton');
   
-    addTimeButton.src = './images/reg/'+ getRandomRegImage()
+    addTimeButton.src = 'images/reg/'+ getRandomRegImage()
 
     // Additional functionality: Create three new "Reduce Time" buttons
     createReduceTimeButtons(5);
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // Function to create multiple reduce time buttons
   function createReduceTimeButtons(numberOfButtons) {
       for (let i = 0; i < numberOfButtons; i++) {
-          createButton('reduceTimeButton', './images/notreg/'+getRandomNotRegImage(), reduceTimeButtonClickHandler);
+          createButton('reduceTimeButton', 'images/notreg/'+getRandomNotRegImage(), reduceTimeButtonClickHandler);
       }
   }
   // Function to get a random image from the images folder
@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Function to create the add time button and additional reduce time buttons
   function createButtons() {
-      createButton('addTimeButton', './images/reg/'+ getRandomRegImage() , addTimeButtonClickHandler);
+      createButton('addTimeButton', 'images/reg/'+ getRandomRegImage() , addTimeButtonClickHandler);
       const numberOfButtons = Math.floor(Math.random() * 10) + 5; // Random number of reduce time buttons (1 to 4)
       createReduceTimeButtons(numberOfButtons);
   }
