@@ -1,0 +1,73 @@
+body {
+  font-family: 'Press Start 2P', cursive; /* Use a retro font */
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+  margin: 0;
+  padding: 0;
+}
+
+#game-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#gameCanvas {
+  border: 2px solid #fff; /* White border for canvas */
+  background-color: #000; /* Black canvas background */
+}
+
+#game-info {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  text-align: right;
+}
+/* Style for the image buttons */
+img {
+  width: 50px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  /* Add more styles as needed */
+}
+
+#game-info p {
+  margin: 0;
+  font-size: 16px;
+}
+
+/* Style for the timer and score */
+#game-info span {
+  font-weight: bold;
+}
+
+/* Custom styles for the canvas */
+canvas {
+  image-rendering: pixelated; /* Maintain pixelated look */
+}
+
+/* Style for the add time button */
+#addTimeButton {
+  position: absolute;
+  top: 10px; /* Adjust as needed */
+  left: 10px; /* Adjust as needed */
+  padding: 10px 20px; /* Adjust padding as needed */
+  font-size: 16px; /* Adjust font size as needed */
+  border: none;
+  cursor: pointer;
+
+}
+
+#title {
+  font-family: 'Press Start 2P', cursive; /* Use a retro font */
+  text-align: center; /* Center align text */
+  position: absolute; /* Position absolutely within the body */
+  top: 100px; /* Place at vertical center */
+  left: 50%; /* Place at horizontal center */
+  transform: translate(-50%, -50%); /* Center horizontally and vertically */
+  font-size: 24px; /* Adjust font size as needed */
+  color: #fff; /* White text */
+}
+/* Additional styling to enhance the retro look */
+/* Add more styles as needed */
