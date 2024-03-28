@@ -139,10 +139,11 @@ document.addEventListener("DOMContentLoaded", function() {
     // Update the timer display
     updateTimer();
 
-    // Check if time has run out
+// Check if time has run out
     if (timeRemaining <= 0) {
         clearInterval(timerInterval); // Stop the timer
-        alert('Time\'s up!'); // Display a message or perform any action when time is up
+        localStorage.setItem('score', score);
+        window.location.href = 'gameOver.html';
     }
   }
 
