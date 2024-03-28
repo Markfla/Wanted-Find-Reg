@@ -9,26 +9,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Function to create a button
   function createButton(buttonID, imagePath, clickHandler) {
-  const button = document.createElement('img');
-  button.src = imagePath; // Set the image path
-  button.id = buttonID;
-  button.style.position = 'absolute';
-
-  // Random position within canvas bounds
-  const canvasRect = canvas.getBoundingClientRect(); // Get canvas position on the page
-  const randomX = Math.floor(Math.random() * canvas.width);
-  const randomY = Math.floor(Math.random() * canvas.height);
-
-  // Position the button relative to the canvas
-  button.style.left = randomX + 'px';
-  button.style.top = randomY + 'px';
-
-  // Add button to the canvas
-  canvas.parentNode.appendChild(button);
-
-  // Add event listener to the button
-  button.addEventListener('click', clickHandler);
-}
+    const button = document.createElement('img');
+    button.src = imagePath; // Set the image path
+    button.id = buttonID;
+    button.style.position = 'absolute';
+  
+    // Random position within canvas bounds
+    const randomX = Math.floor(Math.random() * (canvas.width - button.width));
+    const randomY = Math.floor(Math.random() * (canvas.height - button.height));
+  
+    button.style.left = randomX + 'px';
+    button.style.top = randomY + 'px';
+  
+    // Add button to game-container
+    document.getElementById('game-container').appendChild(button);
+  
+    // Add event listener to the button
+    button.addEventListener('click', clickHandler);
+  }
 
 // Function to update positions of all buttons
 function updateButtonPositions() {
