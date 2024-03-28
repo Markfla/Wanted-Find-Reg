@@ -13,33 +13,27 @@ document.addEventListener("DOMContentLoaded", function() {
     button.src = imagePath; // Set the image path
     button.id = buttonID;
     button.style.position = 'absolute';
-  
-    // Random position within canvas bounds
-    const randomX = Math.floor(Math.random() * (canvas.width - button.width));
-    const randomY = Math.floor(Math.random() * (canvas.height - button.height));
-  
-    button.style.left = randomX + 'px';
-    button.style.top = randomY + 'px';
-  
-    // Add button to game-container
-    document.getElementById('game-container').appendChild(button);
-  
-    // Add event listener to the button
-    button.addEventListener('click', clickHandler);
+
+      // Random position within canvas bounds
+      const canvasRect = canvas.getBoundingClientRect(); // Get canvas position on the page
+      const canvasWidth = canvas.width - 100;
+      const canvasHeight = canvas.height - 100;
+      const randomX = Math.floor(Math.random() * canvasWidth );
+      const randomY = Math.floor(Math.random() * canvasHeight );
+
+      // Calculate position relative to the canvas position on the page
+      const buttonX = canvasRect.left + randomX;
+      const buttonY = canvasRect.top + randomY;
+
+      button.style.left = buttonX + 'px';
+      button.style.top = buttonY + 'px';
+
+      // Add button to game-container
+      document.getElementById('game-container').appendChild(button);
+
+      // Add event listener to the button
+      button.addEventListener('click', clickHandler);
   }
-
-// Function to update positions of all buttons
-function updateButtonPositions() {
-  const buttons = document.querySelectorAll('img');
-  buttons.forEach(button => {
-    const randomX = Math.floor(Math.random() * canvas.width);
-    const randomY = Math.floor(Math.random() * canvas.height);
-
-    // Position the button relative to the canvas
-    button.style.left = randomX + 'px';
-    button.style.top = randomY + 'px';
-  });
-}
 
   // Function to add 5 seconds to the timer when the button is clicked
   function addTimeButtonClickHandler() {
@@ -112,6 +106,28 @@ function updateButtonPositions() {
       createButton('addTimeButton', 'images/Reg/'+ getRandomRegImage() , addTimeButtonClickHandler);
       const numberOfButtons = Math.floor(Math.random() * 10) + 5; // Random number of reduce time buttons (1 to 4)
       createReduceTimeButtons(numberOfButtons);
+  }
+
+  function updateButtonPositions() {
+    const buttons = document.querySelectorAll('img');
+    buttons.forEach(button => {
+        const canvasRect = canvas.getBoundingClientRect(); // Get canvas position on the page
+        const canvasWidth = canvasRect.width;
+        const canvasHeight = canvasRect.height;
+        
+        // Calculate random position within a percentage of canvas width and height
+        const randomXPercent = Math.random() * 0.8 + 0.1; // Random value between 10% and 90%
+        const randomYPercent = Math.random() * 0.8 + 0.1; // Random value between 10% and 90%
+        
+        const randomX = Math.floor(randomXPercent * canvasWidth);
+        const randomY = Math.floor(randomYPercent * canvasHeight);
+
+        const buttonX = canvasRect.left + randomX;
+        const buttonY = canvasRect.top + randomY;
+
+        button.style.left = buttonX + 'px';
+        button.style.top = buttonY + 'px';
+    });
   }
 
 
