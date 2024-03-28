@@ -80,3 +80,32 @@ canvas {
     max-width = 350px;
   }
 }
+
+
+.centered, .centered > h3{
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px
+}
+
+.retro-button {
+
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #1e90ff;
+  color: #fff;
+  border: 3px solid #4c1fb4;
+  border-radius: 8px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.retro-button:hover {
+  background-color: #ff69b4;
+  border-color: #1e90ff;
+}
