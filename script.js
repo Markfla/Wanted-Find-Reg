@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // Function to get a random image from the images folder
   function getRandomNotRegImage() {
     // Array containing image filenames
-    const imageFilenames = ['image0.jpeg','image1.jpeg','image2.jpeg','image3.jpeg','image4.jpeg','image5.jpeg','image6.jpeg','image7.jpeg','image8.jpeg','image9.jpeg', 'image10.jpg']; // Add more filenames as needed
+    const imageFilenames = ['image0.jpeg','image1.jpeg','image2.jpeg','image3.jpeg','image4.jpeg','image5.jpeg','image6.jpeg','image7.jpeg','image8.jpeg','image9.jpeg', 'image10.jpeg']; // Add more filenames as needed
 
     // Get a random index
     const randomIndex = Math.floor(Math.random() * imageFilenames.length);
