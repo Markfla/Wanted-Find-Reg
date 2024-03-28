@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Function to create the add time button and additional reduce time buttons
   function createButtons() {
-      createButton('addTimeButton', 'images/reg/'+ getRandomRegImage() , addTimeButtonClickHandler);
+      createButton('addTimeButton', 'images/Reg/'+ getRandomRegImage() , addTimeButtonClickHandler);
       const numberOfButtons = Math.floor(Math.random() * 10) + 5; // Random number of reduce time buttons (1 to 4)
       createReduceTimeButtons(numberOfButtons);
   }
