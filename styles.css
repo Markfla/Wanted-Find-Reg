@@ -71,3 +71,12 @@ canvas {
 }
 /* Additional styling to enhance the retro look */
 /* Add more styles as needed */
+
+/* Media query for devices with a maximum width of 480 pixels (typical smartphones) */
+@media only screen and (max-width: 480px) {
+  /* Additional mobile-specific styles */
+  #gameCanvas {
+    height: 400;
+    width: 400;
+  }
+}
