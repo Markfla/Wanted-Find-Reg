@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanted! Mini-Game</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+
+</head>
+<body>
+  <div class="centered">
+    <h1>Game Over</h1>
+    <h3 id="scoreDisplay">Your score : </h3>
+  
+    
+    <!-- Button Element -->
+    <button class="retro-button" onclick="redirectToAnotherPage()">Try again</button>
+  </div>
+  <script>
+    // JavaScript function to redirect to another page
+    function redirectToAnotherPage() {
+      // Replace 'destination-page.html' with the URL of the page you want to redirect to
+      window.location.href = 'game.html';
+    }
+
+    // Retrieve the score from local storage and update the h3 tag
+    document.addEventListener('DOMContentLoaded', function() {
+      var score = localStorage.getItem('score'); // Retrieve the score from local storage
+      var scoreDisplay = document.getElementById('scoreDisplay'); // Get the h3 element by its ID
+      if (score) {
+        scoreDisplay.textContent += score; // Update the content of the h3 element with the retrieved score
+      }
+    });
+  </script>
+</body>
+</html>
